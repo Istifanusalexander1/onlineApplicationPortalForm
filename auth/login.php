@@ -140,11 +140,9 @@
                 $email = $_POST['email'];
                 $nin = $_POST['nin'];
                 $password = $_POST['password'];
-
                 $_SESSION['email'] = $email;
                 $_SESSION['nin'] = $nin;
                 $_SESSION['password'] = $password;
-                
                 header("Location: ../apply/index.php");
 
             }else{

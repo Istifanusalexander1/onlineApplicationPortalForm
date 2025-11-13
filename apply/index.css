@@ -1,0 +1,51 @@
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #e1e1e184;
+}
+nav{
+    background-color: #c8c8c8;
+    padding: 40px;
+    >p{
+        font-weight: 900;
+        font-size: 60px;
+        border: solid;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        justify-content: center;
+        text-transform: uppercase;
+        position: absolute;
+        right: 90px;
+        top: 20px;
+        box-shadow: 0 0 10px;
+        cursor: pointer;
+        transition: ease-out 0.3s;
+    }
+    >p:hover{
+        background-color: #e1e1e1;
+    }
+}
+
+.logout-div{
+    background-color: #e1e1e1;
+    padding: 50px;
+    position: absolute;
+
+}
+
+.logout{
+    background-color: #535353;
+    color: #fff;
+    border: none;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 9px;
+}
