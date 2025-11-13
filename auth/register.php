@@ -1,3 +1,14 @@
+<?php
+    session_start();
+?>
+
+<?php
+    if (!empty($_SESSION['email'])){
+        header("Location: ../apply/index.php");
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -122,6 +133,41 @@
     </div>
 </body>
 </html>
+
+
+
+<?php
+
+    if (isset($_SERVER['PHP_SELF'])){
+        if (isset($_POST['register'])){
+            if (!empty($_POST['fullName']) && !empty($_POST['number']) && !empty($_POST['email']) && !empty($_POST['nin']) && !empty($_POST['password']) && !empty($_POST['confirmPassword'])){
+                $fullName = $_POST['fullName'];
+                $number = $_POST['number'];
+                $email = $_POST['email'];
+                $nin = $_POST['nin'];
+                $password = $_POST['password'];
+                $confirmPassword = $_POST['confirmPassword'];
+                
+                if ($password != $confirmPassword){
+                    echo "<script> alert('Password Mismatched!') </script>";
+                }
+                else{
+                    $_SESSION['fullName'] = $fullName;
+                    $_SESSION['number'] = $number;
+                    $_SESSION['email'] = $email;
+                    $_SESSION['nin'] = $nin;
+                    $_SESSION['password'] = $password;
+                    header("Location: ../apply/index.php");
+                }
+            }else{
+                echo "<script>alert('Please kindly fill your details!')</script>";
+            }
+        }
+    }
+
+
+?>
+
 
 
 <!-- https://www.jotform.com/form-templates/new-customer-registration-form

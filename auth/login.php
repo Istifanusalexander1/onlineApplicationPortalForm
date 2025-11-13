@@ -1,3 +1,15 @@
+<?php 
+    session_start();
+?>
+
+
+<?php
+    if (!empty($_SESSION['email'])){
+        header("Location: ../apply/index.php");
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -119,6 +131,29 @@
     </div>
 </body>
 </html>
+
+
+<?php 
+    if (isset($_SERVER['PHP_SELF'])){
+        if (isset($_POST["login"])){
+            if (!empty($_POST['email']) && !empty($_POST['nin']) && !empty($_POST['password'])){
+                $email = $_POST['email'];
+                $nin = $_POST['nin'];
+                $password = $_POST['password'];
+
+                $_SESSION['email'] = $email;
+                $_SESSION['nin'] = $nin;
+                $_SESSION['password'] = $password;
+                
+                header("Location: ../apply/index.php");
+
+            }else{
+                echo "<script>alert('Please kindly fill your details!')</script>";
+            }
+        }
+    }
+?>
+
 
 
 <!-- https://www.jotform.com/form-templates/new-customer-registration-form
