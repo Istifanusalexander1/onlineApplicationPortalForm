@@ -42,7 +42,7 @@
     </nav>
     <div>
         <h1>Welcome To The Nigeran Army New Recruitment Portal</h1><br>
-        <a class="proceed" href="apply/index.php">Proceed to portal</a>
+        <a class="proceed" href="auth/login.php">Proceed to portal</a>
     </div>
 </body>
 </html>
