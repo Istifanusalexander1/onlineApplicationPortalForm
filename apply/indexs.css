@@ -25,19 +25,43 @@ nav{
         right: 90px;
         top: 20px;
         box-shadow: 0 0 10px;
-        cursor: pointer;
         transition: ease-out 0.3s;
     }
     >p:hover{
-        background-color: #e1e1e1;
+        background-color: #535353;
+        color: #c8c8c8;
+        cursor: pointer;
+    }
+    >p:hover + .logout-div{
+        display: block;
+        animation: slideDown ease-out 0.3s backwards;
     }
 }
+
+@keyframes slideDown {
+    0%{
+        opacity: 0.2;
+        transform: translateY(20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 .logout-div{
     background-color: #e1e1e1;
     padding: 50px;
     position: absolute;
-
+    right: 100px;
+    top: 90px;
+    border-radius: 7px;
+    border: solid #535353;
+    display: none;
+}
+.logout-div:hover{
+    display: block;
 }
 
 .logout{
@@ -48,4 +72,12 @@ nav{
     font-size: 18px;
     font-weight: 700;
     border-radius: 9px;
+    width: 150px;
+    cursor: pointer;
+    transition: ease 0.3s;
+}
+.logout:hover{
+    background-color: #c8c8c8;
+    color: #535353;
+    border: solid #535353;
 }
