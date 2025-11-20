@@ -16,7 +16,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Application Portal Form</title>
-    <link rel="stylesheet" href="indexs.css">
+    <link rel="stylesheet" href="test.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <nav>
@@ -33,31 +34,34 @@
         <div class="formTitle">
             <h1>New Nigerian Army Recruitment Registration Form 93RRI</h1>
         </div>
-        <form action="" method="post">
+        <form action="" method="post" id="form">
 
         <!-- Personal Information -->
             <div class="personalDetails">
                 <h3>Personal Bio Data. <img src="../assets/icons/user.png" width=20 alt=""></h3>
-                <label for="passport">Choose Passport</label>
+                <div class="choose">
+                    <label class="choosePicture" for="passport">Choose Passport</label>
+                </div>
                 <input type="file" name="passport" id="passport">
-                <h5>Full Name<p>*</p></h5>
+                <h5>Full Name<p> * </p></h5>
                 <div class="namesInput">
                     <input type="text" placeholder="First Name *">
                     <input type="text" placeholder="Surname *">
-                    <input type="number" placeholder="Phone Number *">
-                    DOB: <input type="date" >
-                    <input type="email" placeholder="Email *">
+                    <input type="text" placeholder="Other names (optional)">
                     <input type="number" placeholder="NIN *">
+                    <input type="number" placeholder="Phone Number *">
+                    <div class="dob">DOB: <input type="date" ></div>
+                    <input type="email" placeholder="Email *">
                     <select name="" id="">
                         <option value="">-----Select Gender-----</option>
                         <option value=""> Male </option>
                         <option value=""> Female </option>
                     </select>
-                    <div>
+                    <div class="gender">
                         Select Gender
                         <br>
-                        <input type="radio" checked id="gender" name="gender">Male
-                        <input type="radio" id="gender" name="gender">Female
+                        <h4> <input type="radio" name="radio" id="male" checked> <label for="male"> Male</label> </h4>
+                        <h4> <input type="radio" name="radio" id="female"> <label for="female">Female</label> </h4>
                     </div>
                 </div>
             </div>
@@ -68,80 +72,109 @@
                 <!-- <h3>Education and Qualification. 📖</h3> -->
 
                 <!-- Primary School Section -->
-                <h5>Primary School Details<p>*</p></h5>
+                <h5 class="primaryDetails secondaryDetails">Primary School Details<p>*</p></h5>
                 <div class="primarySchoolSection">
                     <input type="text" placeholder="Primary School Name *">
                     <textarea placeholder="Please enter the primary school address"></textarea>
                     <div class="primaryYear">
-                         Start year: <select name="year" id="yeah">
-                            <?php
-                                for ($year = 1600; $year <= date('Y'); $year++){
-                                    echo "<option value='$year'>$year</option>";
-                                }
-                            ?>
-                        </select>
-                         End year: <select name="year" id="yeah">
-                            <?php
-                                for ($year = 1600; $year <= date('Y'); $year++){
-                                    echo "<option value='$year'>$year</option>";
-                                }
-                            ?>
-                        </select>
+                        <div class="primaryStartYear">
+                            Start year: <select name="year" id="yeah">
+                               <?php
+                                   for ($year = 1600; $year <= date('Y'); $year++){
+                                       echo "<option value='$year'>$year</option>";
+                                   }
+                               ?>
+                           </select>
+                        </div>
+                        <div class="primaryEndYear">
+                            End year: <select name="year" id="yeah">
+                               <?php
+                                   for ($year = 1600; $year <= date('Y'); $year++){
+                                       echo "<option value='$year'>$year</option>";
+                                   }
+                               ?>
+                           </select>
+                        </div>
                     </div>
-                    Primary school certificate: <input type="file" placeholder="Email *">
+                    <div class="primaryImg">Primary school certificate: <input type="file" placeholder="Email *"></div>
                 </div>
+                <hr>
 
-
-
-                <!-- Secondary School Section --> <br><br><br><br>
-                <h5>Secondary School Details<p>*</p></h5>
+                <!-- secondary School Section -->
+                <h5 class="primaryDetails secondaryDetails">Secondary School Details<p>*</p></h5>
                 <div class="secondarySchoolSection">
                     <input type="text" placeholder="Secondary School Name *">
                     <textarea placeholder="Please enter the secondary school address"></textarea>
                     <div class="secondaryYear">
-                         Start year: <select name="year" id="yeah">
-                            <?php
-                                for ($year = 1600; $year <= date('Y'); $year++){
-                                    echo "<option value='$year'>$year</option>";
-                                }
-                            ?>
-                        </select>
-                         End year: <select name="year" id="yeah">
-                            <?php
-                                for ($year = 1600; $year <= date('Y'); $year++){
-                                    echo "<option value='$year'>$year</option>";
-                                }
-                            ?>
-                        </select>
+                        <div class="secondaryStartYear">
+                            Start year: <select name="year" id="yeah">
+                               <?php
+                                   for ($year = 1600; $year <= date('Y'); $year++){
+                                       echo "<option value='$year'>$year</option>";
+                                   }
+                               ?>
+                           </select>
+                        </div>
+                        <div class="secondaryEndYear">
+                            End year: <select name="year" id="yeah">
+                               <?php
+                                   for ($year = 1600; $year <= date('Y'); $year++){
+                                       echo "<option value='$year'>$year</option>";
+                                   }
+                               ?>
+                           </select>
+                        </div>
                     </div>
-                    Secondeary school certificate: <input type="file" placeholder="Email *">
+                    <div class="secondaryImg">Secondary school certificate: <input type="file" placeholder="Email *"></div>
                 </div>
-            </div>
 
 
-
+                
             <br><br><br><br>
             <!-- Disability Questions -->
-             <div class="disabilityQuestion">
+             <hr>
+            <div class="disabilityQuestion">
+                <!-- Question 1 -->
                 <div class="q1">
                     <p>Have you ever served in any of the Nigeria arm forces? if Yes please give reason bellow</p>
-                    No <input type="radio" name="q1" checked>
-                    Yes <input type="radio" name="q1">
-                    <textarea placeholder="Give reasons"></textarea>
+                    <div class="q1AnswerContainer">
+                        <label for="noServe">No</label><input id="noServe" type="radio" name="serveQuestion" checked>
+                        <div class="q1Answer1">
+                            <label for="yesServe">Yes</label><input id="yesServe" type="radio" name="serveQuestion">
+                            <textarea placeholder="Give reasons"></textarea>
+                        </div>
+                    </div>
                 </div>
-                <div class="q1">
+                
+                <!-- Question 2 -->
+                <div class="q2">
                     <p>Do you have any disability?</p>
-                    No <input type="radio" name="q2" checked>
-                    Yes <input type="radio" name="q2">
-                    <textarea placeholder="Give reasons"></textarea>
+                    <div class="q2AnswerContainer">
+                        <label for="noDisability">No</label><input id="noDisability" type="radio" name="disability" checked>
+                        <div class="q2Answer2">
+                            <label for="yesDisability">Yes</label><input id="yesDisability" type="radio" name="disability">
+                            <textarea placeholder="Give reasons"></textarea>
+                        </div>
+                    </div>
                 </div>
-             </div>
-
-            <input type="submit" value="Submit✔">
+            </div>
+            
+            <button class="ask" type="submit" >Submit✔</button>
+            <!-- <input type="submit" value="Submit✔"> -->
         </form>
+        <div>
+            <dialog id="confirmDialog">
+                <h2>Are you sure you want to submit this form?</h2>
+
+                <button class="yes">Yes</button>
+                <button class="no" type="button">No</button>
+            </dialog>
+
+        </div>
     </div>
 
 </body>
+
 </html>
 
 <?php

@@ -1,0 +1,487 @@
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #dcdada60;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+nav{
+    background-color: #c8c8c8;
+    padding: 40px;
+    width: 100%;
+    >p{
+        font-weight: 900;
+        font-size: 60px;
+        border: solid;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        justify-content: center;
+        text-transform: uppercase;
+        position: absolute;
+        right: 90px;
+        top: 20px;
+        box-shadow: 0 0 10px;
+        transition: ease-out 0.3s;
+    }
+    >p:hover{
+        background-color: #535353;
+        color: #c8c8c8;
+        cursor: pointer;
+    }
+    >p:hover + .logout-div{
+        display: block;
+        animation: slideDown ease-out 0.3s backwards;
+    }
+}
+
+@keyframes slideDown {
+    0%{
+        opacity: 0.2;
+        transform: translateY(20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.logout-div{
+    background-color: #e1e1e1;
+    padding: 50px;
+    position: absolute;
+    right: 100px;
+    top: 90px;
+    border-radius: 7px;
+    border: solid #535353;
+    display: none;
+}
+.logout-div:hover{
+    display: block;
+}
+
+.logout{
+    background-color: #535353;
+    color: #fff;
+    border: none;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 9px;
+    width: 150px;
+    cursor: pointer;
+    transition: ease 0.3s;
+}
+.logout:hover{
+    background-color: #c8c8c8;
+    color: #535353;
+    border: solid #535353;
+}
+
+
+/* Application Portal Body */
+.formBody{
+    display: flex;               /* center children */
+    justify-content: center;     /* center horizontally */
+    padding: 20px;
+    width: 100%;
+    flex-direction: column;
+    h1{
+        text-align: center;
+    }
+}
+/* Form body */
+form{
+    width: 100%;
+    max-width: 1500px;
+    margin: auto;
+}
+#passport{
+    display: none;
+}
+.choose{
+    width: 170px;
+    height: 210px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    .choosePicture{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        border: dashed 5px;
+        font-size: 17px;
+        font-weight: 700;
+        transition: all 0.5s;
+        color: #535353;
+    }
+    .choosePicture:hover{
+        cursor: pointer;
+        font-size: 18px;
+        color: #cd7373;
+    }
+}
+/* Personal details body */
+.personalDetails{
+    border: solid;
+    background-color: #dcdada;
+    padding: 50px;
+    border-radius: 10px;
+    margin-top: 50px;
+    >h3{
+        color: #535353;
+        padding: 30px;
+        font-size: 30px;
+        font-weight: 900;
+    }
+    >h5{
+        display: flex;
+        font-size: 18px;
+        padding: 60px 0 20px 20px;
+    }
+}
+.namesInput{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    >input{
+        padding: 13px;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+    }
+    >input:focus{
+        outline: solid #535353;
+    }
+    >.dob{
+        display: flex;
+        align-items: center;
+        font-size: 17px;
+        font-weight: 50;
+        >input{
+            padding: 13px;
+            width: 100%;
+            font-size: 18px;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            margin: 0 0 0 5px;
+        }
+        >input:focus{
+            outline: solid #535353;
+        }
+    }
+    select{
+        padding: 13px;
+        font-size: 18px;
+        border-radius: 5px;
+        outline: none;
+    }
+    select:focus{
+        outline: solid #535353;
+    }
+    .gender{
+        padding: 20px 0 0 30px;
+        font-size: 17px;
+        font-weight: 700;
+        >h4 label{
+            font-weight: 500;
+        }
+    }
+}
+
+/* Education Section */
+.educationQualification{
+    margin-top: 50px;
+    border: solid;
+    background-color: #dcdada;
+    padding: 50px;
+    border-radius: 10px;
+    h3{
+        font-size: 25px;
+        font-weight: 900;
+        color: #535353;
+    }
+    .primaryDetails{
+        font-size: 17px;
+        display: flex;
+        /* color: #535353; */
+        margin: 60px 0 -70px 0;
+    }
+    /* Primary School Section */
+    .primarySchoolSection{
+        display: grid;
+        font-weight: 700;
+        grid-template-columns: repeat(2, 1fr);
+        input, textarea{
+            padding: 13px;
+            font-size: 17px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            margin: 100px 10px 0 0;
+        }
+        >input:focus, textarea:focus{
+            outline: solid #535353;
+        }
+        >textarea{
+            height: 200px;
+            resize: none;
+        }
+        >input{
+            height: 50px;
+        }
+        .primaryYear{
+            display: grid;
+            font-size: 19px;
+            select{
+                border: none;
+                border-radius: 5px;
+                outline: none;
+                cursor: pointer;
+            }
+            select:focus{
+                outline: solid #535353;
+            }
+            .primaryStartYear{
+                select{
+                    width: 200px;
+                    padding: 13px;
+                    font-size: 17px;
+                }
+            }
+            .primaryEndYear{
+                select{
+                    width: 200px;
+                    padding: 13px;
+                    font-size: 17px;
+                }
+            }
+        }
+        .primaryImg{
+            margin-top: 90px;
+            >input{
+                margin: 0;
+                cursor: pointer;
+                padding: 0;
+            }
+        }
+    }
+
+    /* Secondery school section */
+    .secondarySchoolSection{
+        display: grid;
+        font-weight: 700;
+        grid-template-columns: repeat(2, 1fr);
+        input, textarea{
+            padding: 13px;
+            font-size: 17px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            margin: 100px 10px 0 0;
+        }
+        >input:focus, textarea:focus{
+            outline: solid #535353;
+        }
+        >textarea{
+            height: 200px;
+            resize: none;
+        }
+        >input{
+            height: 50px;
+        }
+        .secondaryYear{
+            display: grid;
+            font-size: 19px;
+            select{
+                border: none;
+                border-radius: 5px;
+                outline: none;
+                cursor: pointer;
+            }
+            select:focus{
+                outline: solid #535353;
+            }
+            .secondaryStartYear{
+                select{
+                    width: 200px;
+                    padding: 13px;
+                    font-size: 17px;
+                }
+            }
+            .secondaryEndYear{
+                select{
+                    width: 200px;
+                    padding: 13px;
+                    font-size: 17px;
+                }
+            }
+        }
+        .secondaryImg{
+            margin-top: 90px;
+            >input{
+                margin: 0;
+                cursor: pointer;
+                padding: 0;
+            }
+        }
+    }
+
+}
+
+hr{
+    margin-top: 70px;
+    padding: .3px;
+    background-color: #535353;
+}
+
+.disabilityQuestion{
+    
+    >.q1{
+        padding: 30px;
+        >p{
+            font-size: 21px;
+            font-weight: 550;
+            margin-bottom: 20px;
+        }
+        .q1AnswerContainer{
+            font-size: 17px;
+            font-weight: 600;
+            >.q1Answer1{
+                display: flex;
+                align-items: baseline;
+                >textarea{
+                    padding: 10px;
+                    resize: none;
+                    font-size: 17px;
+                    border: none;
+                    outline: none;
+                    height: 150px;
+                    width: 600px;
+                    border-radius: 5px;
+                    margin-left: 30px;
+                    display: none;
+                }
+                textarea:focus{
+                    outline: solid #535353;
+                }
+                >#yesServe:checked ~ textarea{
+                    display: block;
+                }
+            }
+        }
+    }
+    >.q2{
+        padding: 30px;
+        >p{
+            font-size: 21px;
+            font-weight: 550;
+            margin-bottom: 20px;
+        }
+        .q2AnswerContainer{
+            font-size: 17px;
+            font-weight: 600;
+            >.q2Answer2{
+                display: flex;
+                align-items: baseline;
+                >textarea{
+                    padding: 10px;
+                    resize: none;
+                    font-size: 17px;
+                    border: none;
+                    outline: none;
+                    height: 150px;
+                    width: 600px;
+                    border-radius: 5px;
+                    margin-left: 30px;
+                    display: none;
+                }
+                textarea:focus{
+                    outline: solid #535353;
+                }
+                #yesDisability:checked ~ textarea{
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.ask{
+    padding: 15px 70px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #1d2482;
+    font-size: 19px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: ease 0.3s;
+}
+.ask:hover{
+    opacity: 0.7;
+}
+
+/* dialog{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} */
+
+
+dialog{
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 50px 30px;
+    font-size: 15px;
+    color: #535353;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgb(0, 0, 0, 50);
+    >button{
+        background-color: #535353;
+        border: none;
+        padding: 10px 70px;
+        border-radius: 5px;
+        margin: 30px;
+        font-size: 19px;
+        color: #fff;
+        font-weight: 600;
+        transition: ease 0.3s;
+        cursor: pointer;
+    }
+    >button:hover{
+        opacity: 0.7;
+    }
+    .yes{
+        background-color: #901e1e;
+    }
+    .no{
+        background-color: #233b2b;
+    }
+}
+dialog::backdrop{
+    background: rgb(0, 0, 0, 0.55);
+    backdrop-filter: blur(2px);
+}

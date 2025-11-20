@@ -1,0 +1,30 @@
+body{
+    background-color: #c5c5c5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    background-color: rgb(238, 238, 238);
+    width: 400px;
+    height: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    color: #844900;
+}
+
+img{
+    width: 100px;
+}
+
+
+
+@media print{
+    .container{
+        color: hotpink;
+        margin-top: -10px;
+
+    }
+}
